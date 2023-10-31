@@ -84,3 +84,8 @@ test("should return This language is not supported.", () => {
   const result = greet(["Saskie", "JOHAN", "Annick"], 'pl');
   expect(result).toBe("This language is not supported.");
 });
+
+test("should return BONJOUR, KRATOS ET THANATHOS!", () => {
+  const result = greet(["KRATOS", "THANATHOS"], 'fr');
+  expect(result).toBe("BONJOUR, KRATOS ET THANATHOS!");
+});

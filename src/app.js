@@ -12,7 +12,7 @@ function greet(names, language = "en") {
     },
     fr: {
       incorrect: "Bonjour, mon ami.",
-      upperCase: "SALUT,",
+      upperCase: "BONJOUR,",
       lowerCase: "Bonjour,",
       and: "et",
       andUpper: "ET",
@@ -56,21 +56,23 @@ function greet(names, language = "en") {
 
     if (lowercaseNames.length !== 0 && uppercaseNames.length !== 0) {
       return (
-        lowercaseNamesToString(lowercaseNames, andTranslation, lowerCaseTranslation) +
-        " " +
+        namesToString(lowercaseNames, andTranslation, lowerCaseTranslation) + ". " +
         uppercaseNamesToString(uppercaseNames, upperCaseTranslation, andUpperTranslation)
       );
     }
-    return lowercaseNamesToString(lowercaseNames, andTranslation, lowerCaseTranslation);
+    if(lowercaseNames.length !== 0){
+      return namesToString(lowercaseNames, andTranslation, lowerCaseTranslation)+".";
+    }
+    return namesToString(uppercaseNames, andUpperTranslation, upperCaseTranslation)+"!";
   }
 
   return `Hello, ${names}.`;
 }
 
-function lowercaseNamesToString(names, andTranslation, lowerCaseTranslation) {
-  return `${lowerCaseTranslation} ${names.slice(0, -1).join(", ")} ${andTranslation} ${
+function namesToString(names, and, lowerCase) {
+  return `${lowerCase} ${names.slice(0, -1).join(", ")} ${and} ${
     names[names.length - 1]
-  }.`;
+  }`;
 }
 
 function uppercaseNamesToString(names, upperCase, andUpper) {
