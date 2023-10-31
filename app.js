@@ -1,4 +1,6 @@
 function greet(name) {
-    return `Hello, ${name}`
+    if (name == null)
+        return "Hello, my friend.";
+    return `Hello, ${name}.`;
 }
 module.exports = greet;
