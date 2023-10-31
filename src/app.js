@@ -1,22 +1,28 @@
 function greet(names, language = "en") {
+  if (language != "en" && language != "fr" && language != "nl") {
+    return "This language is not supported.";
+  }
   const languages = {
     en: {
       incorrect: "Hello, my friend.",
       upperCase: "HELLO,",
       lowerCase: "Hello,",
       and: "and",
+      andUpper: "AND",
     },
     fr: {
       incorrect: "Bonjour, mon ami.",
       upperCase: "SALUT,",
       lowerCase: "Bonjour,",
       and: "et",
+      andUpper: "ET",
     },
     nl: {
       incorrect: "Hallo, mijn vriend.",
       upperCase: "HALLO,",
       lowerCase: "Hallo,",
       and: "en",
+      andUpper: "EN",
     },
   };
 
@@ -34,6 +40,9 @@ function greet(names, language = "en") {
     }
   } else if (Array.isArray(names) && names.length >= 2) {
     const andTranslation = selectedLanguage.and;
+    const lowerCaseTranslation = selectedLanguage.lowerCase;
+    const upperCaseTranslation = selectedLanguage.upperCase;
+    const andUpperTranslation = selectedLanguage.andUpper;
     let lowercaseNames = [];
     let uppercaseNames = [];
 
@@ -47,25 +56,25 @@ function greet(names, language = "en") {
 
     if (lowercaseNames.length !== 0 && uppercaseNames.length !== 0) {
       return (
-        lowercaseNamesToString(lowercaseNames, andTranslation) +
+        lowercaseNamesToString(lowercaseNames, andTranslation, lowerCaseTranslation) +
         " " +
-        uppercaseNamesToString(uppercaseNames)
+        uppercaseNamesToString(uppercaseNames, upperCaseTranslation, andUpperTranslation)
       );
     }
-    return lowercaseNamesToString(lowercaseNames, andTranslation);
+    return lowercaseNamesToString(lowercaseNames, andTranslation, lowerCaseTranslation);
   }
 
   return `Hello, ${names}.`;
 }
 
-function lowercaseNamesToString(names, andTranslation) {
-  return `Hello, ${names.slice(0, -1).join(", ")} ${andTranslation} ${
+function lowercaseNamesToString(names, andTranslation, lowerCaseTranslation) {
+  return `${lowerCaseTranslation} ${names.slice(0, -1).join(", ")} ${andTranslation} ${
     names[names.length - 1]
   }.`;
 }
 
-function uppercaseNamesToString(names) {
-  return `AND HELLO ${names[0]}!`;
+function uppercaseNamesToString(names, upperCase, andUpper) {
+  return `${andUpper} ${upperCase} ${names[0]}!`;
 }
 
 function isUpperCase(name) {
