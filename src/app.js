@@ -1,8 +1,8 @@
-function greet(name) {
-  if (Array.isArray(name) && name.length == 2) return "Hello, Jill and Jane.";
-  if (name === null || name === undefined || name.trim() === "")
+function greet(names) {
+  if (Array.isArray(names) && names.length == 2) return `Hello, ${names[0]} and ${names[1]}.`;
+  if (names === null || names === undefined || names.trim() === "")
     return "Hello, my friend.";
-  if (name === name.toUpperCase()) return `HELLO, ${name}!`;
-  return `Hello, ${name}.`;
+  if (names === names.toUpperCase()) return `HELLO, ${names}!`;
+  return `Hello, ${names}.`;
 }
 module.exports = greet;
