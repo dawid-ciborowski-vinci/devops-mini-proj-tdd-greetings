@@ -49,3 +49,8 @@ test("should return Hello, Kratos and Thanathos.", () => {
   const result = greet(["Kratos", "Thanathos"]);
   expect(result).toBe("Hello, Kratos and Thanathos.");
 });
+
+test("should return Hello, Kratos, Thanathos and Hypnos.", () => {
+  const result = greet(["Kratos", "Thanathos", "Hypnos"]);
+  expect(result).toBe("Hello, Kratos, Thanathos and Hypnos.");
+});

@@ -1,19 +1,27 @@
 function greet(names) {
-  if (twoNames(names)) return `Hello, ${names[0]} and ${names[1]}.`;
-  if (isIncorrect(names)) return "Hello, my friend.";
-  if (isUpperCase(names)) return `HELLO, ${names}!`;
+  if (typeof names === 'string') {
+    if (isIncorrect(names)) {
+      return "Hello, my friend.";
+    } else if (isUpperCase(names)) {
+      return `HELLO, ${names}!`;
+    } else {
+      return `Hello, ${names}.`;
+    }
+  } else if (Array.isArray(names) && names.length >= 2) {
+    return `Hello, ${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}.`;
+  } else if (!names) {
+    return "Hello, my friend.";
+  }
+
   return `Hello, ${names}.`;
 }
-function twoNames(names) {
-  if (Array.isArray(names) && names.length == 2) return true;
-  return false;
-}
+
 function isIncorrect(name) {
-  if (names === null || names === undefined || names.trim() === "") return true;
-  return false;
+  return !name || name.trim() === "";
 }
+
 function isUpperCase(name) {
-  if (names === names.toUpperCase()) return true;
-  return false;
+  return name === name.toUpperCase();
 }
+
 module.exports = greet;
