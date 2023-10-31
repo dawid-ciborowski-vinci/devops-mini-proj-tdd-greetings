@@ -34,3 +34,8 @@ test("should return HELLO, JERRY!", () => {
   const result = greet("JERRY");
   expect(result).toBe("HELLO, JERRY!");
 });
+
+test("should return HELLO, KENOBI!", () => {
+  const result = greet("KENOBI");
+  expect(result).toBe("HELLO, KENOBI!");
+});
