@@ -1,5 +1,5 @@
 function greet(names) {
-  if (typeof names === 'string') {
+  if (typeof names === "string") {
     if (isIncorrect(names)) {
       return "Hello, my friend.";
     } else if (isUpperCase(names)) {
@@ -8,13 +8,38 @@ function greet(names) {
       return `Hello, ${names}.`;
     }
   } else if (Array.isArray(names) && names.length >= 2) {
-    if(names[0] === "Amy" && names[1] === "BRIAN" && names[2] === "Charlotte")return "Hello, Amy and Charlotte. AND HELLO BRIAN!";
-    return `Hello, ${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}.`;
+    let lowercaseNames = [];
+    let uppercaseNames = [];
+
+    names.forEach((name) => {
+      if (isUpperCase(name)) {
+        uppercaseNames.push(name);
+      } else {
+        lowercaseNames.push(name);
+      }
+    });
+    if (lowercaseNames.length != 0 && uppercaseNames.length != 0)
+      return (
+        lowercaseNamesToString(lowercaseNames) +
+        " " +
+        uppercaseNamesToString(uppercaseNames)
+      );
+    return lowercaseNamesToString(lowercaseNames);
   } else if (!names) {
     return "Hello, my friend.";
   }
 
   return `Hello, ${names}.`;
+}
+
+function lowercaseNamesToString(names) {
+  return `Hello, ${names.slice(0, -1).join(", ")} and ${
+    names[names.length - 1]
+  }.`;
+}
+
+function uppercaseNamesToString(names) {
+  return `AND HELLO ${names[0]}!`;
 }
 
 function isIncorrect(name) {
