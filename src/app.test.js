@@ -74,3 +74,13 @@ test("should return Bonjour Kratos et Thanatos.", () => {
   const result = greet(["Kratos", "Thanatos"], 'fr');
   expect(result).toBe("Bonjour, Kratos et Thanatos.");
 });
+
+test("should return Hallo, Saskie en Annick. EN HALLO JOHAN.", () => {
+  const result = greet(["Saskie", "JOHAN", "Annick"], 'nl');
+  expect(result).toBe("Hallo, Saskie en Annick. EN HALLO, JOHAN!");
+});
+
+test("should return This language is not supported.", () => {
+  const result = greet(["Saskie", "JOHAN", "Annick"], 'pl');
+  expect(result).toBe("This language is not supported.");
+});

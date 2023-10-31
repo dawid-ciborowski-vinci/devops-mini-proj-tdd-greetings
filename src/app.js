@@ -1,4 +1,7 @@
 function greet(names, language = "en") {
+  if (language != "en" && language != "fr" && language != "nl") {
+    return "This language is not supported.";
+  }
   const languages = {
     en: {
       incorrect: "Hello, my friend.",
