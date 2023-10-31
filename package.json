@@ -12,7 +12,7 @@
       "prettier:fix": "prettier ./src/** --write",
       "list": "ls -la"
     },
-    "author": "Daweed",
+    "author": "Daweed, Nicolae, Kusay",
     "license": "ISC",
     "devDependencies": {
       "eslint": "^8.51.0",
