@@ -1,24 +1,26 @@
+const { isArray } = require('util');
+
 const languages = {
     en: {
-        incorrect: 'Hello, my friend.',
-        upperCase: 'HELLO,',
-        lowerCase: 'Hello,',
-        and: 'and',
-        andUpper: 'AND',
+        myFriend: 'Hello, my friend.',
+        upperHello: 'HELLO,',
+        lowerHello: 'Hello,',
+        lowerAnd: 'and',
+        upperAnd: 'AND',
     },
     fr: {
-        incorrect: 'Bonjour, mon ami.',
-        upperCase: 'BONJOUR,',
-        lowerCase: 'Bonjour,',
-        and: 'et',
-        andUpper: 'ET',
+        myFriend: 'Bonjour, mon ami.',
+        upperHello: 'BONJOUR,',
+        lowerHello: 'Bonjour,',
+        lowerAnd: 'et',
+        upperAnd: 'ET',
     },
     nl: {
-        incorrect: 'Hallo, mijn vriend.',
-        upperCase: 'HALLO,',
-        lowerCase: 'Hallo,',
-        and: 'en',
-        andUpper: 'EN',
+        myFriend: 'Hallo, mijn vriend.',
+        upperHello: 'HALLO,',
+        lowerHello: 'Hallo,',
+        lowerAnd: 'en',
+        upperAnd: 'EN',
     },
 };
 
@@ -30,12 +32,19 @@ function greet(names, language = 'en') {
     const selectedLanguage = languages[language];
 
     if (isNameIncorrect(names)) {
-        return selectedLanguage.incorrect;
+        return selectedLanguage.myFriend;
     }
 
-    if (isSingleName(names)) {
+    if (typeof names === 'string') {
         return formatSingleNameGreeting(names, selectedLanguage);
-    } else if (isMultipleNames(names)) {
+    } else if (Array.isArray(names)) {
+        names = names.filter((name) => name.trim() !== '');
+        if (names.length === 0) {
+            return selectedLanguage.myFriend;
+        }
+        if (names.length === 1) {
+            return formatSingleNameGreeting(names[0], selectedLanguage);
+        }
         return formatMultipleNamesGreeting(names, selectedLanguage);
     }
 
@@ -55,24 +64,16 @@ function isNameIncorrect(name) {
     return true;
 }
 
-function isSingleName(name) {
-    return typeof name === 'string';
-}
-
-function isMultipleNames(names) {
-    return Array.isArray(names) && names.length >= 2;
-}
-
 function formatSingleNameGreeting(name, selectedLanguage) {
     if (isNameUppercase(name)) {
-        return `${selectedLanguage.upperCase} ${name}!`;
+        return `${selectedLanguage.upperHello} ${name}!`;
     } else {
-        return `${selectedLanguage.lowerCase} ${name}.`;
+        return `${selectedLanguage.lowerHello} ${name}.`;
     }
 }
 
 function formatMultipleNamesGreeting(names, selectedLanguage) {
-    const { and, lowerCase, upperCase, andUpper } = selectedLanguage;
+    const { lowerAnd, lowerHello, upperHello, upperAnd } = selectedLanguage;
     const lowercaseNames = [];
     const uppercaseNames = [];
 
@@ -86,17 +87,17 @@ function formatMultipleNamesGreeting(names, selectedLanguage) {
 
     if (lowercaseNames.length !== 0 && uppercaseNames.length !== 0) {
         return (
-            joinNames(lowercaseNames, and, lowerCase) +
+            joinNames(lowercaseNames, lowerAnd, lowerHello) +
             '. ' +
-            joinUppercaseNames(uppercaseNames, upperCase, andUpper)
+            joinUppercaseNames(uppercaseNames, upperHello, upperAnd)
         );
     }
 
     if (lowercaseNames.length !== 0) {
-        return joinNames(lowercaseNames, and, lowerCase) + '.';
+        return joinNames(lowercaseNames, lowerAnd, lowerHello) + '.';
     }
 
-    return joinNames(uppercaseNames, andUpper, upperCase) + '!';
+    return joinNames(uppercaseNames, upperAnd, upperHello) + '!';
 }
 
 function joinNames(names, and, caseType) {
@@ -105,8 +106,8 @@ function joinNames(names, and, caseType) {
     }`;
 }
 
-function joinUppercaseNames(names, upperCase, andUpper) {
-    return `${andUpper} ${upperCase} ${names[0]}!`;
+function joinUppercaseNames(names, upperHello, upperAnd) {
+    return `${upperAnd} ${upperHello} ${names[0]}!`;
 }
 
 function isNameUppercase(name) {
