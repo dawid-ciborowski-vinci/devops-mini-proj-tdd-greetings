@@ -1,3 +1,5 @@
+const { isArray } = require('util');
+
 const languages = {
     en: {
         myFriend: 'Hello, my friend.',
@@ -33,9 +35,16 @@ function greet(names, language = 'en') {
         return selectedLanguage.myFriend;
     }
 
-    if (isSingleName(names)) {
+    if (typeof names === 'string') {
         return formatSingleNameGreeting(names, selectedLanguage);
-    } else if (isMultipleNames(names)) {
+    } else if (Array.isArray(names)) {
+        names = names.filter((name) => name.trim() !== '');
+        if (names.length === 0) {
+            return selectedLanguage.myFriend;
+        }
+        if (names.length === 1) {
+            return formatSingleNameGreeting(names[0], selectedLanguage);
+        }
         return formatMultipleNamesGreeting(names, selectedLanguage);
     }
 
@@ -53,14 +62,6 @@ function isNameIncorrect(name) {
         return name.length === 0;
     }
     return true;
-}
-
-function isSingleName(name) {
-    return typeof name === 'string';
-}
-
-function isMultipleNames(names) {
-    return Array.isArray(names) && names.length >= 2;
 }
 
 function formatSingleNameGreeting(name, selectedLanguage) {
