@@ -89,3 +89,8 @@ test('should return BONJOUR, KRATOS ET THANATHOS!', () => {
     const result = greet(['KRATOS', 'THANATHOS'], 'fr');
     expect(result).toBe('BONJOUR, KRATOS ET THANATHOS!');
 });
+
+test('should return Hello, Kratos.', () => {
+  const result = greet(['Kratos', '']);
+  expect(result).toBe('Hello, Kratos.');
+});
