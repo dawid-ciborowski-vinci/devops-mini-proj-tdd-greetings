@@ -1,7 +1,7 @@
 # DevOps - Mini Project 1
 
 ## Description
-
+Projet du groupe 51 incluant Dawid Ciborowski, Ahmet Kusay Demir et Nicolae Pastrama.
 Ce projet représente le premier mini projet en DevOps. Il s'agit d'un module de salutation multilingue qui permet de saluer les personnes selon différents formats et langues.
 
 ## Installation
