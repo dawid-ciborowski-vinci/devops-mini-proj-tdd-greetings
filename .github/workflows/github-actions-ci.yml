@@ -2,22 +2,26 @@ name: GitHub Actions Continuous Integration
 run-name: ${{ github.actor }} is launching the pipeline 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository code
-        uses: actions/checkout@v4
+    Explore-GitHub-Actions:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository code
+              uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
+            - name: Install Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '18'
 
-      - name: Install dependencies
-        run: |
-          echo "🚚 Installing project dependencies..."
-          npm install
+            - name: Install dependencies
+              run: |
+                  echo "🚚 Installing project dependencies..."
+                  npm install
 
-      - name: Display start time
-        run: |
-          echo "Starting pipeline : $(TZ=$(date +%Z) date +"%H:%M:%S %Z")"
+            - name: Display start time
+              run: |
+                  echo "Starting pipeline : $(TZ=$(date +%Z) date +"%H:%M:%S %Z")"
+
+            - name: Test Yaml
+              run: |
+                  echo "Test Dawid"
