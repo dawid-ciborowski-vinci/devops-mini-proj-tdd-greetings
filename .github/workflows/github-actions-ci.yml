@@ -20,8 +20,9 @@ jobs:
 
             - name: Display start time
               run: |
-                  echo "Starting pipeline : $(TZ=$(date +%Z) date +"%H:%M:%S %Z")"
+                  echo "Starting pipeline : $(TZ=$(date +%Z) date +"%H:%M:%S %Z")
 
-            - name: Test Yaml
+            - name: Run Prettier
               run: |
-                  echo "Test Dawid"
+                  echo "✨ Running Prettier..."
+                  npm run prettier
