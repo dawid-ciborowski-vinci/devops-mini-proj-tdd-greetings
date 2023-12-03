@@ -1,5 +1,5 @@
 name: GitHub Actions Continuous Integration
-run-name: ${{ github.actor }} is launching the pipeline 🚀
+run-name: launching the pipeline 🚀
 on: [push]
 jobs:
     Explore-GitHub-Actions:
