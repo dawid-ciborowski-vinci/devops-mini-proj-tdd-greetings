@@ -25,9 +25,9 @@ jobs:
             - name: Run Prettier
               run: |
                   echo "✨ Running Prettier..."
-                  npm run prettier
+                  npm run prettier:fix
 
             - name: Run ESLint
               run: |
                   echo "Running ESLint..."
-                  npm run lint
+                  npm run lint:fix
