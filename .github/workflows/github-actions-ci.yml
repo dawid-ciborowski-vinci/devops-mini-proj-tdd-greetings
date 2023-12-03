@@ -26,4 +26,3 @@ jobs:
               run: |
                   echo "✨ Running Prettier..."
                   npm run prettier
-
