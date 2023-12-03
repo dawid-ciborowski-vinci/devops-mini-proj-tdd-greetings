@@ -20,7 +20,7 @@ jobs:
 
             - name: Display start time
               run: |
-                  echo "Starting pipeline : $(date +"%H:%M:%S %Z")"
+                  echo "🕒 Starting pipeline at $(date +"%H:%M:%S %Z")"
 
             - name: Run Prettier
               run: |
@@ -29,5 +29,5 @@ jobs:
 
             - name: Run ESLint
               run: |
-                  echo "Running ESLint..."
+                  echo "🔍 Running ESLint..."
                   npm run lint:fix
