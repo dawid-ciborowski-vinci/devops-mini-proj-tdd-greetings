@@ -1,5 +1,5 @@
 name: GitHub Actions Continuous Integration
-run-name: launching the pipeline 🚀
+run-name: ${{ github.actor }} is launching the pipeline 🚀
 on: [push]
 jobs:
     Explore-GitHub-Actions:
@@ -26,7 +26,7 @@ jobs:
               run: |
                   echo "✨ Running Prettier..."
                   npm run prettier
-            
+
             - name: Check lint
               run: |
                   echo "🔍 Linting with ESLint..."
