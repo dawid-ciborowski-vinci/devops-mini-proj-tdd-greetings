@@ -20,4 +20,4 @@ jobs:
 
       - name: Display start time
         run: |
-          echo "Starting pipeline : $(date +"%H:%M:%S")"
+          echo "Starting pipeline : $(TZ=$(date +%Z) date +"%H:%M:%S %Z")"
