@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1701966855652" clover="3.2.0">
-  <project timestamp="1701966855652" name="All files">
+<coverage generated="1701968226539" clover="3.2.0">
+  <project timestamp="1701968226539" name="All files">
     <metrics statements="35" coveredstatements="34" conditionals="25" coveredconditionals="24" methods="10" coveredmethods="10" elements="70" coveredelements="68" complexity="0" loc="35" ncloc="35" packages="1" files="1" classes="1"/>
-    <file name="greet.js" path="C:\Users\kofog\Documents\Davinci_Bac2_Kusay\BINV2191-1 - DevOps\devops-mini-proj-tdd-greetings\greet.js">
+    <file name="greet.js" path="E:\DevOps\devops-mini-proj-tdd-greetings\greet.js">
       <metrics statements="35" coveredstatements="34" conditionals="25" coveredconditionals="24" methods="10" coveredmethods="10"/>
       <line num="1" count="1" type="stmt"/>
       <line num="26" count="21" type="cond" truecount="2" falsecount="0"/>
