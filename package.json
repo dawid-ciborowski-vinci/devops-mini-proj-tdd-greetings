@@ -10,7 +10,8 @@
         "prettier": "prettier . --check",
         "prettier:fix": "prettier . --write",
         "list": "ls -la",
-        "test:coverage": "jest --coverage"
+        "test:coverage": "jest --coverage",
+        "build": "webpack ./greet.js -o dist/ --mode=development"
     },
     "author": "Daweed, Nicolae, Kusay",
     "license": "ISC",
@@ -19,6 +20,8 @@
         "eslint-config-prettier": "^9.0.0",
         "jest": "^29.7.0",
         "nodemon": "^3.0.1",
-        "prettier": "3.0.3"
+        "prettier": "3.0.3",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^5.1.4"
     }
 }
