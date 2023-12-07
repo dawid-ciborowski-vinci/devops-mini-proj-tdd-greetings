@@ -35,8 +35,13 @@ jobs:
             - name: Check code coverage in jest
               run: |
                   echo "🚦 Checking code coverage in Jest..."
-                  npm run test:coverage   
+                  npm run test:coverage  
+
             - name: Building the app
               run: |
                   echo "Building the app with webpack"
-                  npm run build     
+                  npm run build  
+            
+            - name: Display end time
+              run: |
+                  echo "🕒 Ending pipeline at $(date +"%H:%M:%S %Z")"      
