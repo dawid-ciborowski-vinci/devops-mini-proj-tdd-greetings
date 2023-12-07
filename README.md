@@ -47,35 +47,35 @@ Liens utiles:
 -   Décrivez brièvement ce que fait votre fichier YML.
 
 ```bash
-<votre réponse ici>
+Ce fichier établit le plan pour notre projet Node.js. Il gère l'installation des éléments nécessaires, vérifie le style du code (Prettier, ESLint) et note le début et la fin du processus.
 ```
 
 -   En particulier : à quoi sert le “on” ? dans votre fichier YML ? Quelle est la différence entre “on push” et “on pull request”. Que conseilleriez-vous comme option parmi ces 2 options à un groupe de développeurs junior ? Pourquoi ?
 
 ```bash
-<votre réponse ici>
+Cela indique quand le plan doit se mettre en route. "on push" démarre à chaque fois qu'il y a des modifications, "on pull_request" lorsqu'on propose une fusion. Pour les débutants, commencer par "on pull_request" est plus sûr, car ça permet de vérifier les changements avant de les intégrer.
 ```
 
 -   Quelle est la différence entre run et run_on ? Expliquez par rapport à votre pipeline.
 
 ```bash
-<votre réponse ici>
+ "runs-on" spécifie où se déroulent les étapes (Ubuntu ici), tandis que "run" indique les actions à exécuter à chaque étape.
 ```
 
 -   Quelle est la différence entre “use” et “run”. Expliquez par rapport à votre pipeline.
 
 ```bash
-<votre réponse ici>
+"uses" utilise des outils préconfigurés (comme "actions/checkout@v4"), tandis que "run" exécute des commandes spécifiques dans notre plan.
 ```
 
 -   Peut-on intervertir différentes étapes dans votre pipeline ? Que votre réponse soit oui ou non, expliquez par rapport à votre pipeline.
 
 ```bash
-<votre réponse ici>
+On peut ajuster l'ordre des étapes dans une certaine mesure, mais en respectant les dépendances. Par exemple, l'installation des éléments doit précéder la vérification du code ou sa mise en forme.
 ```
 
 -   Je veux ajouter un test de sécurité sur mon pipeline en exécutant le programme secure_app. Que devrais-je faire ? Quelles questions devriez-vous vous poser ?
 
 ```bash
-<votre réponse ici>
+Pour intégrer secure_app, il faut localiser son emplacement, comprendre ses prérequis, l'ajouter au plan, et réfléchir à son impact sur le temps d'exécution et les ressources. Il est également important de planifier la gestion des résultats du test pour garantir la sécurité du projet.
 ```
