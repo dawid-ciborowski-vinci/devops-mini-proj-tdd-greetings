@@ -3,8 +3,7 @@ run-name: ${{ github.actor }} is launching the pipeline
 on:
     pull_request:
         branches:
-            - '*'
-            
+            - '*'            
 jobs:
     Explore-GitHub-Actions:
         runs-on: ubuntu-latest

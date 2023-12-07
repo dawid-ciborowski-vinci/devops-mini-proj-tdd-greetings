@@ -46,7 +46,6 @@ Liens utiles:
 -   Décrivez brièvement ce que fait votre fichier YML.
 
 ```bash
-<votre réponse ici>
 Ce fichier YML configure un flux de travail d'intégration continue (CI) avec GitHub Actions pour un projet Node.js.
 Il déclenche automatiquement lors de chaque pull request sur n'importe quelle branche. Les étapes incluent la vérification du code, l'installation de Node.js, l'installation des dépendances, l'affichage de l'heure de début, la vérification du style avec Prettier et ESLint, l'évaluation de la couverture de code avec Jest, la construction de l'application avec Webpack, l'affichage de l'heure de fin, et une notification de succès en l'absence d'erreurs.
 ```
