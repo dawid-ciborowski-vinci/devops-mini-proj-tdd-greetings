@@ -9,7 +9,8 @@
         "lint:fix": "eslint --fix .",
         "prettier": "prettier . --check",
         "prettier:fix": "prettier . --write",
-        "list": "ls -la"
+        "list": "ls -la",
+        "test:coverage": "jest --coverage"
     },
     "author": "Daweed, Nicolae, Kusay",
     "license": "ISC",
