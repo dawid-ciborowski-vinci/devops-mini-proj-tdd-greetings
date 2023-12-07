@@ -1,9 +1,9 @@
 name: GitHub Actions Continuous Integration
 run-name: ${{ github.actor }} is launching the pipeline
-on: 
-  pull_request:
-      branches: 
-        - '*'
+on:
+    pull_request:
+        branches:
+            - '*'
 jobs:
     Explore-GitHub-Actions:
         runs-on: ubuntu-latest
@@ -34,21 +34,21 @@ jobs:
               run: |
                   echo "🔍 Running ESLint..."
                   npm run lint:fix
-            
+
             - name: Check code coverage in jest
               run: |
                   echo "🚦 Checking code coverage in Jest..."
-                  npm run test:coverage  
+                  npm run test:coverage
 
             - name: Building the app
               run: |
                   echo "Building the app with webpack"
-                  npm run build  
-            
-            - name: Display start time
+                  npm run build
+
+            - name: Display end time
               run: |
-                  echo "🕒 Starting pipeline at $(date +"%H:%M:%S %Z")"
-                  
+                  echo "🕒 Ending pipeline at $(date +"%H:%M:%S %Z")"
+
             - name: Success without errors
               run: |
-                  echo "PIPELINE SUCCESS WITHOUT ERRORS"      
+                  echo "PIPELINE SUCCESS WITHOUT ERRORS"

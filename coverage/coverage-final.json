@@ -1,6 +1,6 @@
 {
-    "E:\\DevOps\\devops-mini-proj-tdd-greetings\\greet.js": {
-        "path": "E:\\DevOps\\devops-mini-proj-tdd-greetings\\greet.js",
+    "C:\\Users\\kofog\\Documents\\Davinci_Bac2_Kusay\\BINV2191-1 - DevOps\\devops-mini-proj-tdd-greetings\\greet.js": {
+        "path": "C:\\Users\\kofog\\Documents\\Davinci_Bac2_Kusay\\BINV2191-1 - DevOps\\devops-mini-proj-tdd-greetings\\greet.js",
         "statementMap": {
             "0": {
                 "start": { "line": 1, "column": 18 },
@@ -546,6 +546,6 @@
             "12": [4, 2]
         },
         "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-        "hash": "9c1bc710ec4047251ec2ceb720c6ed618cff2417"
+        "hash": "615bd0a1c5c19c00f810b9b4740deb8ad210ddef"
     }
 }
