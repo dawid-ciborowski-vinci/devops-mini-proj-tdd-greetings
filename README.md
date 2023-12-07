@@ -21,15 +21,16 @@ Compléter les informations concernant votre numéro de groupe et membres du gro
 
 ### Mettre en place une intégration continue
 
-L'intégration continue doit se composer des étapes obligatoires suivantes (non-exhaustif): 
-- Les dépendances doivent être installées 
-- Une première étape indiquant l'heure de commencement de la pipeline doit être affichée 
-- Le code doit être "formatté" correctement (Prettier) 
-- Le code doit être "linté" correctement (Lint) 
-- Le code doit être "testé" correctement ET le coverage doit être au-dessus de 80% (Jest) 
-- Le code doit être "buildé" correctement 
-- Une étape indiquant l'heure de fin de la pipeline doit être affichée 
-- Une étape indiquant le string suivant "PIPELINE SUCCESS WITHOUT ERRORS" doit être affichée
+L'intégration continue doit se composer des étapes obligatoires suivantes (non-exhaustif):
+
+-   Les dépendances doivent être installées
+-   Une première étape indiquant l'heure de commencement de la pipeline doit être affichée
+-   Le code doit être "formatté" correctement (Prettier)
+-   Le code doit être "linté" correctement (Lint)
+-   Le code doit être "testé" correctement ET le coverage doit être au-dessus de 80% (Jest)
+-   Le code doit être "buildé" correctement
+-   Une étape indiquant l'heure de fin de la pipeline doit être affichée
+-   Une étape indiquant le string suivant "PIPELINE SUCCESS WITHOUT ERRORS" doit être affichée
 
 ### Enclencher l'intégration continue lors d'une Pull Request / Merge Request
 
@@ -42,11 +43,11 @@ Liens utiles:
 
 ## Questions
 
-- Décrivez brièvement ce que fait votre fichier YML.
+-   Décrivez brièvement ce que fait votre fichier YML.
 
 ```bash
 <votre réponse ici>
-Ce fichier YML configure un flux de travail d'intégration continue (CI) avec GitHub Actions pour un projet Node.js. 
+Ce fichier YML configure un flux de travail d'intégration continue (CI) avec GitHub Actions pour un projet Node.js.
 Il déclenche automatiquement lors de chaque pull request sur n'importe quelle branche. Les étapes incluent la vérification du code, l'installation de Node.js, l'installation des dépendances, l'affichage de l'heure de début, la vérification du style avec Prettier et ESLint, l'évaluation de la couverture de code avec Jest, la construction de l'application avec Webpack, l'affichage de l'heure de fin, et une notification de succès en l'absence d'erreurs.
 ```
 
