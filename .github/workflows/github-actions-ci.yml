@@ -42,6 +42,10 @@ jobs:
                   echo "Building the app with webpack"
                   npm run build  
             
-            - name: Display end time
+            - name: Display start time
               run: |
-                  echo "🕒 Ending pipeline at $(date +"%H:%M:%S %Z")"      
+                  echo "🕒 Starting pipeline at $(date +"%H:%M:%S %Z")"
+                  
+            - name: Success without errors
+              run: |
+                  echo "PIPELINE SUCCESS WITHOUT ERRORS"      
