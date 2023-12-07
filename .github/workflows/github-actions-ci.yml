@@ -1,6 +1,8 @@
 name: GitHub Actions Continuous Integration
 run-name: ${{ github.actor }} is launching the pipeline
-on: [push]
+on: pull_request:
+      branches: 
+        - '*'
 jobs:
     Explore-GitHub-Actions:
         runs-on: ubuntu-latest
