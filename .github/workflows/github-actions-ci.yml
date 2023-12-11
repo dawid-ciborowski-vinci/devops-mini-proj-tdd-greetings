@@ -28,12 +28,12 @@ jobs:
             - name: Check Prettier
               run: |
                   echo "✨ Running Prettier..."
-                  npm run prettier:fix
+                  npm run prettier
 
             - name: Run ESLint
               run: |
                   echo "🔍 Running ESLint..."
-                  npm run lint:fix
+                  npm run lint
 
             - name: Check code coverage in Jest
               run: |
